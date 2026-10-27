@@ -1,43 +1,57 @@
+# Ex01 Portfolio
+## Date:
 
-# Dharaniga | Portfolio
+## AIM
+To create a Portfolio using HTML and CSS.
 
-Welcome to my personal portfolio repository!
+## ALGORITHM
+### STEP 1
+Create an HTML file (index.html)
 
-## About Me
+### STEP 2
+Create a CSS file (style.css)
 
-I'm Dharaniga, a second-year Computer Science Engineering student at Saveetha Engineering College. I'm interested in web development and Machine Learning, and I'm continuously improving my programming and problem-solving skills.
+### STEP 3
+Include a navigation bar with links to different sections.
 
-## Technologies Used
+### STEP 4
+Add structured sections for introduction, about, projects, and contact details.
 
-- HTML5
-- CSS3
-- Git
-- GitHub
-- GitHub Pages
+### STEP 5
+Define global styles for fonts, colors, and layout.
 
-## Projects
+### STEP 6
+Style the header, navigation bar, and sections.
 
-### 1. PG Life
-A web project focused on exploring accommodation options.
+### STEP 7
+Use Flexbox or CSS Grid for layout design.
 
-### 2. Task Manager
-A project focused on organizing tasks and improving productivity.
+### STEP 8
+Add hover effects and transitions for interactivity.
 
-### 3. Personal Portfolio
-A personal website showcasing my skills, projects, and contact information.
+### STEP 9
+Add Images and Media.
 
-## Live Website
+### STEP 10
+Use optimized images for a professional look.
 
-Visit my portfolio:
-https://dharani-sankar.github.io/portfolio/
+### STEP 11
+Open the HTML file in a browser to check layout and functionality.
 
-## Connect With Me
+### STEP 12
+Fix styling issues and refine content placement.
 
-- GitHub: https://github.com/dharani-sankar
-- LinkedIn: Add your LinkedIn profile URL
-- Email: Add your professional email address
+### STEP 13
+Deploy the Portfolio.
 
----
+### STEP 14
+Upload to GitHub Pages for free hosting.
 
-Thank you for visiting my portfolio!
+## PROGRAM
 
+
+## OUTPUT
+
+
+## RESULT
+The program for creating Portfolio using HTML and CSS is executed successfully.
