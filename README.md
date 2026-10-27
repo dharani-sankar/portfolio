@@ -1,5 +1,5 @@
 # Ex01 Portfolio
-## Date:
+## Date:27.10.2026
 
 ## AIM
 To create a Portfolio using HTML and CSS.
@@ -48,7 +48,424 @@ Deploy the Portfolio.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharaniga S | Portfolio</title>
 
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8f3;
+            color: #183b2b;
+            line-height: 1.7;
+        }
+
+        a:focus-visible, .btn:focus-visible { outline: 3px solid #268451; outline-offset: 3px; }
+
+        header {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px #0000000a;
+        }
+
+        header h2 { color: #268451; }
+
+        nav a {
+            text-decoration: none;
+            color: #183b2b;
+            margin-left: 18px;
+        }
+
+        nav a:hover { color: #268451; }
+
+        section { padding: 65px 8%; scroll-margin-top: 70px; }
+
+        /* ---------- Hero with photo ---------- */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text { flex: 1 1 420px; }
+
+        .hero h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.2; }
+        .hero h1 span { color: #268451; }
+        .hero h2 { margin-top: 12px; }
+        .hero p { max-width: 600px; color: #555; margin: 18px 0 25px; }
+
+        .photo-box {
+            position: relative;
+            width: 300px;
+            height: 360px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            border: 6px solid white;
+            box-shadow: 14px 14px 0 #268451;
+            background: #e2eee4;
+            overflow: hidden;
+        }
+
+        .photo-box .initials {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: bold;
+            color: #268451;
+        }
+
+        .photo-box img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #246b45;
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            margin: 5px 8px 5px 0;
+        }
+
+        .btn:hover { background: #183b2b; }
+
+        .btn.outline { background: transparent; color: #246b45; border: 2px solid #246b45; }
+        .btn.outline:hover { background: #246b45; color: white; }
+
+        /* ---------- Stats strip ---------- */
+        .stats {
+            background: #183b2b;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 36px 8%;
+            text-align: center;
+        }
+
+        .stats strong { display: block; font-size: 34px; color: #8fd9b0; }
+
+        .section-title { font-size: 30px; margin-bottom: 20px; }
+
+        .card-container { display: flex; flex-wrap: wrap; gap: 20px; }
+
+        .card {
+            flex: 1 1 250px;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #0000000d;
+        }
+
+        .card h3 { color: #268451; margin-bottom: 10px; }
+        .card p, #about p, #contact p { color: #555; }
+        .card a { color: #246b45; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 10px; }
+        .card a:hover { text-decoration: underline; }
+
+        #about p { max-width: 720px; margin-bottom: 14px; }
+
+        .interests { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+        .interests span { background: #e2eee4; padding: 6px 14px; border-radius: 20px; font-size: 14px; }
+
+        /* ---------- Timeline (education) ---------- */
+        .timeline { list-style: none; border-left: 2px solid #cfe0d3; padding-left: 28px; max-width: 760px; }
+        .timeline li { position: relative; padding-bottom: 10px; }
+        .timeline li::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #268451;
+            border: 3px solid #f7f8f3;
+        }
+        .timeline .when { color: #268451; font-weight: bold; font-size: 14px; }
+        .timeline p { color: #555; }
+
+        /* ---------- Skills ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px 40px;
+        }
+
+        .skill label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 6px; }
+        .skill label span { color: #268451; }
+        .bar { height: 10px; background: #e2eee4; border-radius: 99px; overflow: hidden; }
+        .bar span { display: block; height: 100%; background: #268451; border-radius: 99px; }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .tags span { background: white; border: 1px solid #cfe0d3; padding: 8px 16px; border-radius: 20px; }
+
+        /* ---------- Achievements ---------- */
+        .achieve-list { list-style: none; display: grid; gap: 16px; max-width: 820px; }
+        .achieve-list li {
+            background: white;
+            border-left: 5px solid #268451;
+            border-radius: 8px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 15px #0000000d;
+        }
+        .achieve-list h3 { font-size: 17px; }
+        .achieve-list p { color: #555; }
+
+        #contact a { color: #246b45; }
+        #contact p { margin-bottom: 6px; }
+
+        footer { background: #183b2b; color: white; text-align: center; padding: 20px; }
+
+        @media (max-width: 760px) {
+            .hero { flex-direction: column-reverse; align-items: flex-start; min-height: auto; }
+            .photo-box { width: 240px; height: 290px; box-shadow: 10px 10px 0 #268451; }
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; position: static; }
+            nav a { margin: 0 6px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Dharaniga.</h2>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Dharaniga S</span></h1>
+            <h2>Computer Science Engineering Student</h2>
+
+            <p>
+                Aspiring Web Developer interested in Machine Learning.
+                I enjoy learning new technologies, building web projects,
+                and improving my problem-solving skills.
+            </p>
+
+            <div>
+                <a href="#projects" class="btn">View My Projects</a>
+                <a href="#contact" class="btn outline">Contact Me</a>
+            </div>
+        </div>
+
+        <!-- Save your photo as photo.jpg in the same folder as this file -->
+        <div class="photo-box">
+            <div class="initials">DS</div>
+            <img src="c:\Users\Dharaniga\Pictures\iimm.jpeg" alt="Portrait of Dharaniga S" onerror="this.style.display='none'">
+        </div>
+    </section>
+
+    <div class="stats">
+        <div><strong>70+</strong>LeetCode problems solved</div>
+        <div><strong>3</strong>Projects</div>
+        <div><strong>3</strong>Certifications</div>
+        <div><strong>2</strong>Tech events attended</div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <p>
+            I'm a second-year Computer Science Engineering student
+            at Saveetha Engineering College. I'm learning web
+            development and exploring Machine Learning while
+            strengthening my programming fundamentals.
+        </p>
+        <p>
+            I practice data structures and algorithms regularly, build small
+            web projects to apply what I learn, and take part in hackathons
+            and tech events to learn from other developers.
+        </p>
+
+        <div class="interests">
+            <span>Web Development</span>
+            <span>Machine Learning</span>
+            <span>Data Structures &amp; Algorithms</span>
+            <span>Generative AI</span>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+
+        <ul class="timeline">
+            <li>
+                <span class="when">Currently studying</span>
+                <h3>B.E. Computer Science Engineering</h3>
+                <p>Saveetha Engineering College, Chennai</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill">
+                <label>HTML <span>85%</span></label>
+                <div class="bar"><span style="width:85%"></span></div>
+            </div>
+            <div class="skill">
+                <label>CSS <span>80%</span></label>
+                <div class="bar"><span style="width:80%"></span></div>
+            </div>
+            <div class="skill">
+                <label>JavaScript <span>50%</span></label>
+                <div class="bar"><span style="width:50%"></span></div>
+            </div>
+            <div class="skill">
+                <label>Python <span>70%</span></label>
+                <div class="bar"><span style="width:70%"></span></div>
+            </div>
+            <div class="skill">
+                <label>C <span>75%</span></label>
+                <div class="bar"><span style="width:75%"></span></div>
+            </div>
+            <div class="skill">
+                <label>C++ <span>65%</span></label>
+                <div class="bar"><span style="width:65%"></span></div>
+            </div>
+        </div>
+
+        <div class="tags">
+            <span>Java Basics</span>
+            <span>Django Basics</span>
+            <span>Git &amp; GitHub</span>
+            <span>Figma</span>
+            <span>Problem solving</span>
+            <span>Teamwork</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>PG Life</h3>
+                <p>
+                    A web project focused on helping users explore
+                    accommodation options.
+                </p>
+                <a href="https://github.com/dharani-sankar">View on GitHub</a>
+            </div>
+
+            <div class="card">
+                <h3>Task Manager</h3>
+                <p>
+                    A project idea for organizing tasks and
+                    managing daily activities.
+                </p>
+                <a href="https://github.com/dharani-sankar">View on GitHub</a>
+            </div>
+
+            <div class="card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A personal website built with HTML and CSS
+                    to showcase my skills and projects.
+                </p>
+                <a href="https://github.com/dharani-sankar">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2 class="section-title">Achievements &amp; Certifications</h2>
+
+        <ul class="achieve-list">
+            <li>
+                <h3>Codeathon, VIT Vellore</h3>
+                <p>Participated in the hackathon.</p>
+            </li>
+            <li>
+                <h3>Tech Trivia, CIT Chennai</h3>
+                <p>Attended the tech trivia event.</p>
+            </li>
+            <li>
+                <h3>C and Python Certifications</h3>
+                <p>Certified in C and Python by Code Galatta.</p>
+            </li>
+            <li>
+                <h3>IBM: Ethical Considerations for Generative AI</h3>
+                <p>Completed the IBM course on the ethical use of generative AI.</p>
+            </li>
+            <li>
+                <h3>70+ problems solved on LeetCode</h3>
+                <p>Currently continuing to learn and practice data structures and algorithms.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p>I'm open to learning, collaborating, and exploring opportunities.</p>
+        <br>
+
+        <p>
+            Email:
+            <a href="mailto:dhyadharani@gmail.com">dhyadharani@gmail.com</a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/dharani-sankar">github.com/dharani-sankar</a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/dharaniga-sankar/">Dharaniga Sankar | LinkedIn</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Dharaniga S | Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
+```
 
 ## OUTPUT
 
