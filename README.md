@@ -475,9 +475,5 @@ Upload to GitHub Pages for free hosting.
 ![Uploading Screenshot (316).png…]()
 
 
-
-
-
-
 ## RESULT
 The program for creating Portfolio using HTML is executed successfully.
