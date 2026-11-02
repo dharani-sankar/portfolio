@@ -2,7 +2,7 @@
 ## Date:27.10.2026
 
 ## AIM
-To create a Portfolio using HTML and CSS.
+To create a Portfolio using HTML.
 
 ## ALGORITHM
 ### STEP 1
@@ -468,7 +468,16 @@ Upload to GitHub Pages for free hosting.
 ```
 
 ## OUTPUT
+![Uploading Screenshot (312).png…]()
+![Uploading Screenshot (313).png…]()
+![Uploading Screenshot (314).png…]()
+![Uploading Screenshot (315).png…]()
+![Uploading Screenshot (316).png…]()
+
+
+
+
 
 
 ## RESULT
-The program for creating Portfolio using HTML and CSS is executed successfully.
+The program for creating Portfolio using HTML is executed successfully.
