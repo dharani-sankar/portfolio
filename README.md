@@ -468,11 +468,13 @@ Upload to GitHub Pages for free hosting.
 ```
 
 ## OUTPUT
-![Uploading Screenshot (312).png…]()
-![Uploading Screenshot (313).png…]()
-![Uploading Screenshot (314).png…]()
-![Uploading Screenshot (315).png…]()
-![Uploading Screenshot (316).png…]()
+<img width="1920" height="1080" alt="Screenshot (312)" src="https://github.com/user-attachments/assets/18fe6c17-f25d-4ae8-b980-c6565286406c" />
+<img width="1920" height="1080" alt="Screenshot (313)" src="https://github.com/user-attachments/assets/769df66f-4e5a-4e3c-8db0-ca790d5425cc" />
+<img width="1920" height="1080" alt="Screenshot (314)" src="https://github.com/user-attachments/assets/339f5c60-dc72-47b9-8555-4c3effbdf868" />
+<img width="1920" height="1080" alt="Screenshot (315)" src="https://github.com/user-attachments/assets/9cceadb5-ced7-44ae-baea-1d9ea338d732" />
+<img width="1920" height="1080" alt="Screenshot (316)" src="https://github.com/user-attachments/assets/006ba053-836c-4dc8-885c-d48c30e232d7" />
+
+
 
 
 ## RESULT
